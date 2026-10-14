@@ -115,6 +115,31 @@ powershell -File scripts/build-exe.ps1
 
 打包前会自动把 `dist/config.json` 备份到 `dist/config-backups/`，避免覆盖你的配置。
 
+## 🛠️ 修改前端后如何生效
+
+服务端查找页面文件的顺序是 **运行目录（`dist/`） → `app/` → 项目根 → exe 内嵌**，
+运行目录里的副本优先级最高。所以只改项目根那份、或改了不体检，都容易踩坑
+（运行目录里留着一份引用已删变量的旧副本时，页面会加载即崩、所有按钮失效）。
+推荐三步走：
+
+```powershell
+# 1) 静态体检：语法 / 死标识符 / DOM id / 视图接线 / 悬空调用
+node scripts/page-check.js anime-fansub-guide.html
+
+# 2) 同步到运行目录（自动备份旧副本 + md5 校验；体检不过会拒绝写入）
+powershell -File scripts/sync-dist.ps1
+
+# 3) 冒烟：headless Chrome 真实加载页面，遍历各视图抓运行时错误
+node scripts/diagnose-live.js http://127.0.0.1:7788/
+```
+
+> 页面响应带 `Cache-Control: no-store`，改完普通刷新即可，无需重启 exe。
+> `diagnose-live.js` 需要 Chrome，可用环境变量 `CHROME_PATH` 指定路径。
+
+`page-check.js` 里的「悬空调用」检查是为一次真实事故加的：删除某个视图时，
+若连带删掉了**寄居在该视图代码中间的共享全局**（例如 `const SEASON`、`function esc`），
+页面会在加载时抛 `ReferenceError`，导致整段脚本中断、所有视图与按钮失效。
+
 ## 📁 目录结构
 
 ```
@@ -125,6 +150,9 @@ app/config.example.json      配置模板
 scripts/build-season.js      聚合本季快照 → season-data.js
 scripts/refresh-season.ps1   定时抓取（本季快照数据源）
 scripts/build-exe.ps1        PyInstaller 打包成单文件 exe
+scripts/sync-dist.ps1        改完前端 → 体检并同步进运行目录 dist/
+scripts/page-check.js        前端静态体检（语法 / 死标识符 / DOM id / 悬空调用）
+scripts/diagnose-live.js     headless Chrome 冒烟，遍历各视图抓运行时错误
 docs/                        README 配图（banner / flow / screenshot）
 season-data.js               本季快照数据（由脚本生成，未随仓库提供）
 ```
