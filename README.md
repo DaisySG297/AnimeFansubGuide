@@ -8,7 +8,7 @@
 
 ![License](https://img.shields.io/github/license/DaisySG297/AnimeFansubGuide?style=flat-square&label=%E5%8D%8F%E8%AE%AE)
 ![Python](https://img.shields.io/badge/Python-3.8%2B-3776AB?style=flat-square&logo=python&logoColor=white)
-![Platform](https://img.shields.io/badge/Platform-Windows%20%7C%20Linux%20%7C%20macOS-lightgrey?style=flat-square)
+![Platform](https://img.shields.io/badge/Platform-Windows-0078D6?style=flat-square&logo=windows&logoColor=white)
 ![ani-rss](https://img.shields.io/badge/ani--rss-7789-0ea5e9?style=flat-square)
 ![Stars](https://img.shields.io/github/stars/DaisySG297/AnimeFansubGuide?style=flat-square&color=facc15)
 
