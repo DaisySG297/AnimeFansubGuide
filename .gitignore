@@ -1,0 +1,21 @@
+# 运行期配置与状态（含凭据，绝不入库）
+app/config.json
+dist/
+*.log
+*.bak
+*.bak-*
+__pycache__/
+*.pyc
+
+# 生成物 / 缓存
+.build/
+.cache/
+season-data.js
+oldrss_backup/
+config-backups/
+
+# 编辑器 / 系统
+.vscode/
+.idea/
+Thumbs.db
+Desktop.ini

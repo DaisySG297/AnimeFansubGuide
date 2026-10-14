@@ -1,0 +1,16 @@
+{
+  "port": 7788,
+  "bind": "127.0.0.1",
+  "anirssBase": "http://127.0.0.1:7789",
+  "apiKey": "",
+  "openBrowser": true,
+  "enable": true,
+  "timeout": 25,
+  "reminderBase": "http://127.0.0.1:8903",
+  "reminder": true,
+  "auth": {
+    "enable": false,
+    "username": "",
+    "password": ""
+  }
+}
