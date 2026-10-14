@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="250" viewBox="0 0 1180 250" font-family="'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#38bdf8"/>
+    </marker>
+  </defs>
+  <rect width="1180" height="250" rx="16" fill="#f0f9ff"/>
+
+  <g font-size="17" font-weight="600" text-anchor="middle">
+    <g>
+      <rect x="30" y="62" width="180" height="112" rx="14" fill="#ffffff" stroke="#7dd3fc" stroke-width="2"/>
+      <text x="120" y="102" font-size="30">🔍</text>
+      <text x="120" y="134" fill="#075985">搜索番剧</text>
+      <text x="120" y="157" fill="#64748b" font-size="12.5" font-weight="400">蜜柑阶梯回退</text>
+    </g>
+    <g>
+      <rect x="260" y="62" width="180" height="112" rx="14" fill="#ffffff" stroke="#7dd3fc" stroke-width="2"/>
+      <text x="350" y="102" font-size="30">🧩</text>
+      <text x="350" y="134" fill="#075985">挑选字幕组</text>
+      <text x="350" y="157" fill="#64748b" font-size="12.5" font-weight="400">主组 / 备用组</text>
+    </g>
+    <g>
+      <rect x="490" y="62" width="180" height="112" rx="14" fill="#ffffff" stroke="#7dd3fc" stroke-width="2"/>
+      <text x="580" y="102" font-size="30">👁️</text>
+      <text x="580" y="134" fill="#075985">生成计划</text>
+      <text x="580" y="157" fill="#64748b" font-size="12.5" font-weight="400">预览 · 二次确认</text>
+    </g>
+    <g>
+      <rect x="720" y="62" width="180" height="112" rx="14" fill="#ffffff" stroke="#38bdf8" stroke-width="2"/>
+      <text x="810" y="102" font-size="30">🚀</text>
+      <text x="810" y="134" fill="#0c4a6e">写入 ani-rss</text>
+      <text x="810" y="157" fill="#64748b" font-size="12.5" font-weight="400">服务端代理 · 免暴露 Key</text>
+    </g>
+    <g>
+      <rect x="950" y="62" width="180" height="112" rx="14" fill="#0c4a6e"/>
+      <text x="1040" y="102" font-size="30">📅</text>
+      <text x="1040" y="134" fill="#ffffff">审计 · 提醒</text>
+      <text x="1040" y="157" fill="#7dd3fc" font-size="12.5" font-weight="400">漏订检查 · 今日播出</text>
+    </g>
+  </g>
+
+  <g stroke="#38bdf8" stroke-width="2.5" fill="none">
+    <line x1="212" y1="118" x2="254" y2="118" marker-end="url(#arr)"/>
+    <line x1="442" y1="118" x2="484" y2="118" marker-end="url(#arr)"/>
+    <line x1="672" y1="118" x2="714" y2="118" marker-end="url(#arr)"/>
+    <line x1="902" y1="118" x2="944" y2="118" marker-end="url(#arr)"/>
+  </g>
+
+  <text x="590" y="228" text-anchor="middle" fill="#0284c7" font-size="13">全程本地运行，ani-rss apiKey 只留在服务端 config.json，浏览器不直连 ani-rss</text>
+</svg>
